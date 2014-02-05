@@ -1,4 +1,4 @@
-contacts-manager
-================
+# Contacts Manager
 
-Manage contacts on OSX
+It is aimed to add Pinyin to the Chinese names and format the mobile numbers in the contacts.
+
