@@ -13,21 +13,9 @@
 		B7C06CAF18A2A69000D69BDC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B7C06CAD18A2A69000D69BDC /* Credits.rtf */; };
 		B7C06CB218A2A69000D69BDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C06CB118A2A69000D69BDC /* AppDelegate.m */; };
 		B7C06CB518A2A69000D69BDC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7C06CB318A2A69000D69BDC /* MainMenu.xib */; };
-		B7C06CB718A2A69000D69BDC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C06CB618A2A69000D69BDC /* Images.xcassets */; };
-		B7C06CBE18A2A69000D69BDC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C06CBD18A2A69000D69BDC /* XCTest.framework */; };
-		B7C06CBF18A2A69000D69BDC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C06C9E18A2A69000D69BDC /* Cocoa.framework */; };
 		B7C06CD318A2A7CC00D69BDC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C06CD218A2A7CC00D69BDC /* AddressBook.framework */; };
+		B7E5255619EF20F900CC746A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7E5255519EF20F900CC746A /* Images.xcassets */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B7C06CC018A2A69000D69BDC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B7C06C9318A2A69000D69BDC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B7C06C9A18A2A69000D69BDC;
-			remoteInfo = ContactsManager;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B7C06C9B18A2A69000D69BDC /* ContactsManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,10 +31,8 @@
 		B7C06CB018A2A69000D69BDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B7C06CB118A2A69000D69BDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B7C06CB418A2A69000D69BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		B7C06CB618A2A69000D69BDC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B7C06CBC18A2A69000D69BDC /* ContactsManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7C06CBD18A2A69000D69BDC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B7C06CD218A2A7CC00D69BDC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		B7E5255519EF20F900CC746A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +42,6 @@
 			files = (
 				B7C06CD318A2A7CC00D69BDC /* AddressBook.framework in Frameworks */,
 				B7C06C9F18A2A69000D69BDC /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7C06CB918A2A69000D69BDC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B7C06CBF18A2A69000D69BDC /* Cocoa.framework in Frameworks */,
-				B7C06CBE18A2A69000D69BDC /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				B7C06C9B18A2A69000D69BDC /* ContactsManager.app */,
-				B7C06CBC18A2A69000D69BDC /* ContactsManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,7 +70,6 @@
 			children = (
 				B7C06CD218A2A7CC00D69BDC /* AddressBook.framework */,
 				B7C06C9E18A2A69000D69BDC /* Cocoa.framework */,
-				B7C06CBD18A2A69000D69BDC /* XCTest.framework */,
 				B7C06CA018A2A69000D69BDC /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -116,7 +91,7 @@
 				B7C06CB018A2A69000D69BDC /* AppDelegate.h */,
 				B7C06CB118A2A69000D69BDC /* AppDelegate.m */,
 				B7C06CB318A2A69000D69BDC /* MainMenu.xib */,
-				B7C06CB618A2A69000D69BDC /* Images.xcassets */,
+				B7E5255519EF20F900CC746A /* Images.xcassets */,
 				B7C06CA518A2A69000D69BDC /* Supporting Files */,
 			);
 			path = ContactsManager;
@@ -154,24 +129,6 @@
 			productReference = B7C06C9B18A2A69000D69BDC /* ContactsManager.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B7C06CBB18A2A69000D69BDC /* ContactsManagerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B7C06CCF18A2A69000D69BDC /* Build configuration list for PBXNativeTarget "ContactsManagerTests" */;
-			buildPhases = (
-				B7C06CB818A2A69000D69BDC /* Sources */,
-				B7C06CB918A2A69000D69BDC /* Frameworks */,
-				B7C06CBA18A2A69000D69BDC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B7C06CC118A2A69000D69BDC /* PBXTargetDependency */,
-			);
-			name = ContactsManagerTests;
-			productName = ContactsManagerTests;
-			productReference = B7C06CBC18A2A69000D69BDC /* ContactsManagerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -180,11 +137,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Zeyue Chen";
-				TargetAttributes = {
-					B7C06CBB18A2A69000D69BDC = {
-						TestTargetID = B7C06C9A18A2A69000D69BDC;
-					};
-				};
 			};
 			buildConfigurationList = B7C06C9618A2A69000D69BDC /* Build configuration list for PBXProject "ContactsManager" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -200,7 +152,6 @@
 			projectRoot = "";
 			targets = (
 				B7C06C9A18A2A69000D69BDC /* ContactsManager */,
-				B7C06CBB18A2A69000D69BDC /* ContactsManagerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -211,16 +162,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C06CA918A2A69000D69BDC /* InfoPlist.strings in Resources */,
-				B7C06CB718A2A69000D69BDC /* Images.xcassets in Resources */,
+				B7E5255619EF20F900CC746A /* Images.xcassets in Resources */,
 				B7C06CAF18A2A69000D69BDC /* Credits.rtf in Resources */,
 				B7C06CB518A2A69000D69BDC /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7C06CBA18A2A69000D69BDC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,22 +180,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7C06CB818A2A69000D69BDC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B7C06CC118A2A69000D69BDC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B7C06C9A18A2A69000D69BDC /* ContactsManager */;
-			targetProxy = B7C06CC018A2A69000D69BDC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B7C06CA718A2A69000D69BDC /* InfoPlist.strings */ = {
@@ -375,46 +304,6 @@
 			};
 			name = Release;
 		};
-		B7C06CD018A2A69000D69BDC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ContactsManager.app/Contents/MacOS/ContactsManager";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ContactsManager/ContactsManager-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ContactsManagerTests/ContactsManagerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		B7C06CD118A2A69000D69BDC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ContactsManager.app/Contents/MacOS/ContactsManager";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ContactsManager/ContactsManager-Prefix.pch";
-				INFOPLIST_FILE = "ContactsManagerTests/ContactsManagerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -434,14 +323,7 @@
 				B7C06CCE18A2A69000D69BDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		B7C06CCF18A2A69000D69BDC /* Build configuration list for PBXNativeTarget "ContactsManagerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B7C06CD018A2A69000D69BDC /* Debug */,
-				B7C06CD118A2A69000D69BDC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

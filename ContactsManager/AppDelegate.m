@@ -22,22 +22,29 @@
     [logTextView setEditable:NO];
 }
 
+
+#pragma mark Start Click Function
 /**
  * Click Start Button
  */
-- (IBAction)clickStart:(id)sender
+- (IBAction) clickStart:(id)sender
 {
     ABAddressBook *ab = [ABAddressBook addressBook];
     int changeCountPinyin = 0, changeCountPhoneNumber = 0;
     
     for (ABPerson *person in ab.people) {
-        BOOL needSet = NO;
         
-        // add pinyin
+        // get first and last name
         NSString *first = [person valueForProperty:kABFirstNameProperty];
         NSString *last = [person valueForProperty:kABLastNameProperty];
-        NSString *firstPinyin, *lastPinyin;
+        if (![self isChinese:first] || ![self isChinese:last]) {
+            // not Chinese, continue
+            continue;
+        }
         
+        // check if first and last Pinyin already exists
+        BOOL needSet = NO;
+        NSString *firstPinyin, *lastPinyin;
         if (last) {
             lastPinyin = [self phonetic:last];
             if (![[person valueForProperty:kABLastNamePhoneticProperty] isEqualToString:lastPinyin]) {
@@ -45,7 +52,6 @@
                 needSet = YES;
             }
         }
-        
         if (first) {
             firstPinyin = [self phonetic:first];
             if (![[person valueForProperty:kABFirstNamePhoneticProperty] isEqualToString:firstPinyin]) {
@@ -53,45 +59,14 @@
                 needSet = YES;
             }
         }
-        
         NSString *name = [NSString stringWithFormat:@"%@%@", [self stringFilter:last], [self stringFilter:first]];
         NSString *pinyinName = [NSString stringWithFormat:@"%@%@", [self stringFilter:lastPinyin], [self stringFilter:firstPinyin]];
         
+        // not exists or not the same
         if (needSet) {
             changeCountPinyin++;
             NSLog(@"[Pinyin] %@: %@", name, pinyinName);
             [self addLog:[NSString stringWithFormat:@"[Pinyin] %@: %@", name, pinyinName]];
-        }
-        
-        // format number
-        needSet = NO;
-        ABMultiValue *numberList = [person valueForProperty:kABPhoneProperty];
-        NSInteger count = [numberList count];
-        ABMutableMultiValue *newNumberList = [[ABMutableMultiValue alloc] init];
-        
-        for (int i=0; i<count; i++) {
-            NSString *num = (NSString *)[numberList valueAtIndex:i];
-            NSString *label = (NSString *)[numberList labelAtIndex:i];
-            
-            if (num != NULL) {
-                NSString *purifiedNum = [self purifyNumber:num];
-                
-                if ([self validateMobile:purifiedNum] == YES) {
-                    NSString *formattedNum = [NSString stringWithFormat:@"+86%@", purifiedNum];
-                    [newNumberList addValue:formattedNum withLabel:kABPhoneMobileLabel];
-                    if (![num isEqualToString:formattedNum]) {
-                        needSet = YES;
-                        NSLog(@"[Format] %@: From %@ to %@", name, num, formattedNum);
-                        [self addLog:[NSString stringWithFormat:@"[Format] %@: From %@ to %@", name, num, formattedNum]];
-                    }
-                } else {
-                    [newNumberList addValue:num withLabel:label];
-                }
-            }
-        }
-        if (needSet) {
-            changeCountPhoneNumber++;
-            [person setValue:newNumberList forProperty:kABPhoneProperty];
         }
         
         /**
@@ -113,7 +88,9 @@
 }
 
 
+#pragma mark UI
 /**
+ * UI
  * add one log to the logTextView
  */
 - (void) addLog:(NSString *) text
@@ -122,6 +99,25 @@
         [logTextView setString:text];
     } else {
         [logTextView setString:[NSString stringWithFormat:@"%@\n%@", [logTextView string], text]];
+    }
+}
+
+#pragma mark Utils
+/**
+ * Utils - isChinese
+ * check if the string is Chinese
+ */
+- (BOOL) isChinese: (NSString *) string
+{
+    if ([string length] == 0) {
+        return NO;
+    }
+    
+    unichar chinese = [string characterAtIndex:0];
+    if (chinese >= 0x4e00 && chinese <= 0x9fff) {
+        return YES;
+    } else {
+        return NO;
     }
 }
 
